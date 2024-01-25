@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" text="text/css" href="./style.css">
+    <title>Document</title>
+</head>
+<body> 
+    <div id="logIn">
+        <h1>LogIn</h1>
+        <p>lorem ipsum sit amer dolor.</p>
+        <div class="loginformfield">
+            <label for="email">E-Mail</label>
+            <input id="email" type="text" placeholder="Your E-Mail">
+            <div class="error"></div>
+            <label for="password">Password</label>
+            <input id="password" type="text" placeholder="Your password">
+            <div class="error"></div>
+            <div>                
+                <input type="checkbox" id="stay" name="stay"> 
+                <label for="stay">stay logged in</label>
+            </div> 
+            <button type="submit">Login</button>
+        </div>
+        <div class="socialBtns">
+            <div>Google</div>
+            <div>Facebook</div>
+            <div>Twiiter</div>
+        </div>
+    </div>
+    <div class="background">
+    
+    <div id="signIn">
+        <h1>Already signed up?</h1>
+        <p>Log in to your account so you can continue building and editing your onboarding flows.</p>
+        <button id="signInBtn" onclick="toggleScreen(this.innerHTML)">SignIn</button>
+        <!-- toggleScreen(consoloe.log(e.target.this)) -->
+    </div>
+    </div>
+    <div id="signUp">
+            <h1>Sign up for an Account</h1>
+            <p>lorem ipsum sit amer dolor.</p>
+            <div class="signupformfield">
+                <label for="lastname">Lastname</label>
+                <input id="lastname" type="text" placeholder="Your lastname">
+                <label for="firstname">Firstname</label>
+                <input id="firstname" type="text" placeholder="Your firstname">
+                <label for="email">E-Mail</label>
+                <input id="email" type="text" placeholder="Your E-Mail">
+                <label for="spassword">Password</label>
+                <input id="spassword" type="text" placeholder="Your password">
+                <div>                
+                    <input type="checkbox" id="privacy" name="privacy"> 
+                    <label for="privacy">Privacy</label>
+                </div> 
+                <button type="submit">Sign Up</button>
+            </div>
+            <div class="socialBtns">
+                <div>Google</div>
+                <div>Facebook</div>
+                <div>Twiiter</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
