@@ -5,26 +5,49 @@ body {
     box-sizing: border-box;
 
     display: flex;
+    background-color: rgb(250, 244, 255);
+
     /* justify-content: center; */
     align-items: center;
+}
+
+h1, p, label, button {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+p, label {
+    font-size: 1.2rem;
+    line-height: 2rem;
 }
 
 button{
     /* outline: 10px solid white; */
     border: 1px solid rgb(255, 255, 255);
     border-radius: 4px;
-    background-color: #3354d4;
+    background-color: rgb(83, 60, 99);
     color: white;
+}
+
+.backgroundanimation {
+    position: absolute;
+    z-index: -1;
+    height: 100vh; 
+    width: 50%;
+    background-color: rgb(31, 18, 42);
+    border-radius: 0 50% 50% 0; 
 }
 
 .background {
     flex: 50%;
     height: 100vh; 
     width: 100%;
-    background: rgb(25, 25, 25);
+    /* HINTERGRUND AUF FALSCHER EBENE. FÜHRT ZU SPRÜNGEN */
+    /* background: rgb(25, 25, 25); */
     display: grid; 
     align-content: center;
     justify-content:center;
+
+    border-radius: 0 50% 50% 0;
 
     & #signIn {
         color: white;
@@ -40,19 +63,19 @@ button{
 }
 
 #logIn {
+    visibility: hidden;
     align-content: center;
 
-    /* WIRD GETROGGELT ZWISCHEN 0 & 50  */
+    /* WIRD GETOGGELT ZWISCHEN 0 & 50  */
     flex: 0%;
     height: 100vh; 
 
-    /* WIRD GETROGGELT */
+    /* WIRD GETOGGELT */
     & > * {
         display: none; 
     }
 
     & .loginformfield > * {
-        display: none; 
         width: 0px;
     }
 }
@@ -61,12 +84,7 @@ button{
     display: grid; 
     justify-content: center;
 
-    /* & > * {
-        display: none; 
-    } */
-
     & input[type='text'], button {
-        /* width: 100%; */
         padding: 4%;
     }
     
@@ -85,41 +103,25 @@ button{
     }
 }
 
+@keyframes ani_signup{
+    0% {
+        border-radius: 50% 0 0 50%; 
+        transform: translate(100%, 0px);
+    }
+    100% {
+        border-radius: 0 50% 50% 0;
+        transform: translate(0, 0px);
 
-/* KONSTRUKT ANIMATION */
-&:hover {
-    transition: 0.5s;
-    box-shadow: 6px 6px 0 #FBC638;
-
-    & span:nth-child(2) {
-        transition: 0.5s;
-        margin-right: 40px;
-    }
-    & path.three {
-        animation: color_anim 1s infinite 0.2s;
-    }
-    & path.one {
-        transform: translateX(0%);
-        animation: color_anim 1s infinite 0.6s;
-    }
-    & path.two {
-        transform: translateX(0%);
-        animation: color_anim 1s infinite 0.4s;
     }
 }
 
-
-/* SVG Pfeil-Animation (Try again Button) */
-@keyframes color_anim {
+@keyframes ani_signin{
     0% {
-        fill: white;
-    }
-    50% {
-        fill: #FBC638;
+        border-radius: 0 50% 50% 0;
     }
     100% {
-        fill: white;
-    }}
+        border-radius: 50% 0 0 50%;
+        transform: translate(100%, 0px);
 
-/* KONSTRUKT ENDE */
-   
+    }
+}

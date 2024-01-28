@@ -1,5 +1,6 @@
 
 let signUp = document.querySelector('#signUp'); 
+let background = document.querySelector('.backgroundanimation');
 
 let logIn = document.querySelector('#logIn');
 let logInChildren = logIn.children; //Alle Kindelemente von logIn
@@ -18,16 +19,23 @@ function toggleScreen(target){
     switch(true){
         case target == "SignIn":
             signUp.style.display = "none"; 
-            logIn.style.flex = "50%";
+            logIn.style.flex = "60%";
+            logIn.style.visibility= "visible";
+            background.style.animation = "ani_signin 0.7s forwards";
             
+            // loginformfield.style.display = 'block';
             // Alle Kindelemente auf block setzen. 
             for (var i = 0; i < logInChildren.length; i++) {
                 logInChildren[i].style.display = 'block';
+                logInChildren[i].style.width = '350px';
             }
+
+            //Weil das letzte Element aus logInChildren block wäre und die paddings ineinader gehen. (8 statt 16px)
+            loginformfield.style.display = 'grid';
 
             for (var j = 0; j < loginformfieldChildren.length; j++) {
                 loginformfieldChildren[j].style.display = 'block';
-                loginformfieldChildren[j].style.width = "350px";
+                loginformfieldChildren[j].style.width = "auto";
             }
 
             title.innerHTML = "Dont have an acccount?"; 
@@ -39,6 +47,8 @@ function toggleScreen(target){
         case target == "SignUp":
             signUp.style.display = ""; 
             logIn.style.flex = "0"; 
+            background.style.animation = "ani_signup 0.7s forwards";
+
             
             // Alle Kindelemente auf block setzen. 
             for (var i = 0; i < logInChildren.length; i++) {
@@ -50,10 +60,9 @@ function toggleScreen(target){
                 loginformfieldChildren[j].style.width = "0px";
             }
 
-            title.innerHTML = "Alredy Signed up?"; 
+            title.innerHTML = "Already signed up?"; 
             text.innerHTML = "Log in to your account so you can continue building and editing your onboarding flows."; 
             button.innerHTML = "SignIn"; 
             break; 
-            break;
         } 
 }
