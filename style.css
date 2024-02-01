@@ -11,11 +11,11 @@ body {
     align-items: center;
 }
 
-h1, p, label, button {
+h1, label, p, button {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
-p, label {
+h1>p, label {
     font-size: 1.2rem;
     line-height: 2rem;
 }
@@ -80,14 +80,19 @@ button{
     }
 }
 
+#spasssword:valid {
+    background-color: aqua;
+}
+
 #logIn, #signIn, #signUp {
     display: grid; 
     justify-content: center;
 
-    & input[type='text'], button {
-        padding: 4%;
+    /* & input[type='text'], button { */
+    & input, button {
+    padding: 4%;
     }
-    
+
     /* WIRD GETOGGELT */
     & .signupformfield {
         width: 350px;

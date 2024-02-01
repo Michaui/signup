@@ -13,6 +13,35 @@ let text = document.querySelector('#signIn > p');
 let button = document.querySelector('#signIn > button'); 
 
 
+let form = document.querySelector('.signupformfield');
+// let form = document.querySelector('.form');
+let mail = document.querySelector('#email');
+let passwort = document.querySelector('#spasssword'); 
+let error = document.querySelector('#error'); 
+let submit = document.querySelector('#submit'); 
+
+form.addEventListener('submit', e => { 
+
+    e.preventDefault();
+    console.log('Test');
+    validateInputs(e)});
+    
+
+const setError = (message) => {
+    error.innerText = message; 
+}
+
+
+const validateInputs = () => {
+    const passwortValue = passwort.value.trim(); 
+
+    if(passwortValue === '') {
+        setError('Ey Jung, schreib ein Passwort ins Feld');
+    }
+}
+
+
+
 function toggleScreen(target){
     // console.log(text);
 
@@ -43,7 +72,7 @@ function toggleScreen(target){
             button.innerHTML = "SignUp"; 
             break; 
 
-        
+
         case target == "SignUp":
             signUp.style.display = ""; 
             logIn.style.flex = "0"; 
@@ -66,3 +95,4 @@ function toggleScreen(target){
             break; 
         } 
 }
+

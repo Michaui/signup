@@ -36,21 +36,27 @@
     <div id="signUp">
             <h1>Sign up for an Account</h1>
             <p>lorem ipsum sit amer dolor.</p>
-            <div class="signupformfield">
+            <!-- <div class="signupformfield"> -->
+            <form class="signupformfield">
                 <label for="lastname">Lastname</label>
                 <input id="lastname" type="text" placeholder="Your lastname">
                 <label for="firstname">Firstname</label>
                 <input id="firstname" type="text" placeholder="Your firstname">
                 <label for="email">E-Mail</label>
-                <input id="email" type="text" placeholder="Your E-Mail">
+                <!-- <input id="email" type="email" pattern="[0-9a-zA-Z!@#$%^&*]+@[0-9a-zA-Z!@#$%^&*]\.[a-z]{2,4}" placeholder="Your E-Mail" required> -->
+                <input id="email" type="email" placeholder="Your E-Mail">
                 <label for="spassword">Password</label>
-                <input id="spassword" type="text" placeholder="Your password">
+                <!-- Pattern "-" stellt NUR den Intervall dar, dieser gültig ist. -->
+                <input id="spasssword" type="text" placeholder="Your password">
+                <!-- <input id="spasssword" type="text" pattern="[0-9a-zA-Z!@#$%^&*]{3,}" placeholder="Your password" required> -->
+                <!-- <input id="spasssword" type="text" pattern="[0-9]{3,}" placeholder="Your password" required> -->
+                <p id="error">Must be at least 8 characters</p>
                 <div>                
                     <input type="checkbox" id="privacy" name="privacy"> 
                     <label for="privacy">Privacy</label>
                 </div> 
-                <button type="submit">Sign Up</button>
-            </div>
+                <button id="submit" type="submit">Sign Up</button>
+            </form>
         </div>
     </div>
 </body>
