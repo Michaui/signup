@@ -47,10 +47,18 @@
                 <input id="email" type="email" placeholder="Your E-Mail">
                 <label for="spassword">Password</label>
                 <!-- Pattern "-" stellt NUR den Intervall dar, dieser gültig ist. -->
-                <input id="spasssword" type="text" placeholder="Your password">
+                <input id="spasssword" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Your password">
                 <!-- <input id="spasssword" type="text" pattern="[0-9a-zA-Z!@#$%^&*]{3,}" placeholder="Your password" required> -->
                 <!-- <input id="spasssword" type="text" pattern="[0-9]{3,}" placeholder="Your password" required> -->
+                <input type="checkbox" onclick="togglepassword()"> 
+                <p>Zeige mir das Passwort an</p>
                 <p id="error">Must be at least 8 characters</p>
+                <div id="message">
+                    <p id="letter" class="invalid">- A lowercase letter</p>
+                    <p id="capital" class="invalid">- A capital (uppercase) letter</p>
+                    <p id="number" class="invalid">- A number</p>
+                    <p id="length" class="invalid">- Minimum 8 characters</p>
+                  </div>
                 <div>                
                     <input type="checkbox" id="privacy" name="privacy"> 
                     <label for="privacy">Privacy</label>

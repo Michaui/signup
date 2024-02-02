@@ -28,6 +28,37 @@ button{
     color: white;
 }
 
+
+/* Passwort Validierung */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+  }
+
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+  }
+
+  #message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+
+
 .backgroundanimation {
     position: absolute;
     z-index: -1;

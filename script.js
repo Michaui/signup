@@ -16,14 +16,74 @@ let button = document.querySelector('#signIn > button');
 let form = document.querySelector('.signupformfield');
 // let form = document.querySelector('.form');
 let mail = document.querySelector('#email');
-let passwort = document.querySelector('#spasssword'); 
 let error = document.querySelector('#error'); 
 let submit = document.querySelector('#submit'); 
 
+
+let passwort = document.querySelector('#spasssword'); 
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+
+https://www.w3schools.com/howto/howto_js_password_validation.asp
+
+passwort.onfocus = function() {
+    document.getElementById('message').style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+passwort.onblur = function() {
+    document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+passwort.onkeyup = function() {
+    // Validate lowercase letters
+    var lowerCaseLetters = /[a-z]/g;
+    if(passwort.value.match(lowerCaseLetters)) {
+      letter.classList.remove("invalid");
+      letter.classList.add("valid");
+    } else {
+      letter.classList.remove("valid");
+      letter.classList.add("invalid");
+    }
+
+    // Validate capital letters
+    var upperCaseLetters = /[A-Z]/g;
+    if(passwort.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+    } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+    }
+
+    // Validate numbers
+    var numbers = /[0-9]/g;
+    if(passwort.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+    } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+    } 
+
+    // Validate length
+    if(passwort.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+    } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+    }
+}
+
 form.addEventListener('submit', e => { 
 
+    //Das Standardverhalten wäre normalerweise das Neuladen der Seite oder das Versenden der Formulardaten an einen Server. Das Verhindern dieses Standardverhaltens ermöglicht es, das Absenden des Formulars mithilfe von JavaScript zu steuern.
     e.preventDefault();
-    console.log('Test');
     validateInputs(e)});
     
 
@@ -39,7 +99,6 @@ const validateInputs = () => {
         setError('Ey Jung, schreib ein Passwort ins Feld');
     }
 }
-
 
 
 function toggleScreen(target){
@@ -96,3 +155,12 @@ function toggleScreen(target){
         } 
 }
 
+function togglepassword(){
+    if(passwort.type === 'password'){
+        // Ändert den typen zu Text
+        passwort.type = 'text'; 
+    }
+    else {
+        passwort.type = "password"; 
+    }
+}
