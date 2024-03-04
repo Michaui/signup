@@ -91,7 +91,6 @@ const setError = (message) => {
     error.innerText = message; 
 }
 
-
 const validateInputs = () => {
     const passwortValue = passwort.value.trim(); 
 
